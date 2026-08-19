@@ -24,6 +24,8 @@ while True:
     ret, frame = cap.read()
     if not ret:
         break
+
+    
     results = model.track(frame, persist=True, tracker="bytetrack.yaml")
     if results[0].boxes.id is None:
         continue
